@@ -4,6 +4,9 @@
 
 Demonstration of GET & POST Comment endpoints added:
 
+* [Insomnia Demo](https://watch.screencastify.com/v/yJxo9mllnHHQkXGS0CAx)
+<hr>
+
 ## Description
 Added commenting functionality to an existing Node.js app, using Express Framework, Mongoose, and data stored in a Mongo database, by adding two new additional endpoints.
 
@@ -12,7 +15,7 @@ Added commenting functionality to an existing Node.js app, using Express Framewo
 2) Get Comment at /blog/post/{id}/comment
 
 ## User Story
-AS A fan of reading blogs,
+AS AN engaging fan of reading blogs,
 
 I WANT to be able to view and create comments for a blog,
 
