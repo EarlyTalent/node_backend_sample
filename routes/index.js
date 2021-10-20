@@ -1,10 +1,18 @@
-const express = require('express')
-const GetBlogs = require('./controller/getBlogs')
-const PostBlog = require('./controller/postBlog')
+const express = require('express');
+const router = express.Router();
+// IMPORTING BLOG & COMMENT CONTROLLERS
+const GetBlogs = require('../controller/getBlogs');
+const PostBlog = require('../controller/PostBlog');
+const GetComments = require('../controller/getComments');
+const PostComment = require('../controller/PostComment');
 
-const router = express.Router()
+// BLOG ROUTES WITH PREFIX
+router.get('/blog/:id', GetBlogs);
+router.post('/blog/post', PostBlog);
 
-router.post('/blog/:id', GetBlogs)
-router.get('/blog/post', PostBlog)
+// COMMENT ROUTES
+router.get('/blog/post/:id/comment', GetComments);
+router.post('/blog/post/:id/comment', PostComment);
+
 
 module.exports = router

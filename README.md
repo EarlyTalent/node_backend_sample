@@ -1,46 +1,59 @@
-## Levvel Technical Interview ##
+#node_backend_sample
 
-### Project Setup ###
-- Fork the repository and clone the repository to your local machine.  Documentation on how to do this https://docs.github.com/en/get-started/quickstart/fork-a-repo
-- open the project locally
-- Create a branch using the naming convention **yourFirstName_yourLastName**. This is where you work should be saved.
-- The application will start on http://localhost:3001
+![GitHub](https://img.shields.io/github/repo-size/asantercureton/node_backend_sample?style=plastic) ![GitHub](https://img.shields.io/github/last-commit/asantercureton/node_backend_sample?style=plastic) ![GitHub](https://img.shields.io/github/languages/top/asantercureton/node_backend_sample?style=plastic) ![GitHub](https://img.shields.io/github/followers/asantercureton?style=social)
 
-## Existing State ##
-This is a simple node application for serving a blog.<br>
-It uses Express Framework, Mongoose, and data is stored in a Mongo database.
+Demonstration of GET & POST Comment endpoints added:
 
-Currently the application has 2 endpoints:
+## Description
+Added commenting functionality to an existing Node.js app, using Express Framework, Mongoose, and data stored in a Mongo database, by adding two new additional endpoints.
 
-1) To add a blog post - Post at /blog/post
-2) To get a blog post by id - Get at /blog/:id
+1) Post Comment at /blog/post/{id}/comment
 
-## Task ##
-Your task is to add a commenting feature.
+2) Get Comment at /blog/post/{id}/comment
 
-You should add two new endpoints.
+## User Story
+AS A fan of reading blogs,
 
-1) Post at /blog/post/{1}/comment - which should create a new comment for a post with passed {id}
+I WANT to be able to view and create comments for a blog,
 
-2) Get at /blog/post/{1}/comment - which should return all comments for a post with passed {id}
-Under the resources folder are example json files for both a Blog and a Comment.
+SO THAT I can express my thoughts regarding the content of the blog.
 
-Feel free to modify existing files or create new files. You may add new dependencies if you choose. Please follow the conventions in place throughout the project.
+## Table Of Contents
+* [Links](#links)
 
-### Please spend no more than 4 hours on this task ###
+* [Installation](#installation)
 
-## Resources
-You may use any internet sources to aid your implementation.
+* [Instructions](#instructions)
 
-Below are a few links to documentation that may be helpful:
+* [Screenshots](#screenshots)
 
-ExpressJS - https://expressjs.com/
+* [License](#license)
 
-Mongo - https://docs.mongodb.com/guides/server/install/ : https://docs.mongodb.com/guides/
 
-Mongoose - https://mongoosejs.com/
+## Links
+[GitHub Repo](https://github.com/asantercureton/node_backend_sample)
 
-## Submitting Your Work (IMPORTANT)
-When you are finished, create a Pull Request in Github for the forked repository. This Pull Request should compare your created branch to the **main** branch. Email the link to your Pull Request to nicole.chini@levvel.io at least 24 hours prior to your technical interview
 
-Please make sure your Pull Request is for your forked repo, NOT the original repo
+## Installation
+Run "npm install" at root directory
+
+Then run "npm run seed"
+
+## Instructions
+Run "npm start" to intiate the application.
+
+## Screenshots
+Below is a screenshot of the project:
+
+![Image of Insomnia - GET Comment](./assets/images/levvel-node-sample-code-get-comment.jpg)
+
+![Image of Insomnia - POST Comment](./assets/images/levvel-node-sample-code-post-comment.jpg)
+
+![Image of Insomnia - GET Blog](./assets/images/levvel-node-sample-code-get-blog.jpg)
+
+
+## License
+![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)
+
+---
+© 2021 NoSQL Node Backend Sample App.
