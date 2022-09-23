@@ -1,6 +1,8 @@
 const Blog = require('../models/blog')
 
 getBlogs = async (req, res) => {
+  // This method returns all blogs, but the route given is expected to return
+  // a specific blog based on id
   await Blog.find({}, (err, blog) => {
     if (err) {
       return res.status(400).json({ success: false, error: err })

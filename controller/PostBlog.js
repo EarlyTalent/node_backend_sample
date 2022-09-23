@@ -33,4 +33,22 @@ postBlog = (req, res) => {
     })
 }
 
+// async function insertTemp() {
+//   try {
+//     await Blog.insertMany([
+//       {
+//         "id": "1"
+//       },
+//       {
+//         "id": "2"
+//       }
+//     ]);
+//   }
+//   catch (error) {
+//     console.log(error);
+//   }
+  
+// }
+
+// insertTemp();
 module.exports = { postBlog }
