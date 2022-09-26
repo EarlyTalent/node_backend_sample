@@ -1,6 +1,6 @@
 const Blog = require('../models/blog')
 
-postBlog = (req, res) => {
+const postBlog = (req, res) => {
   const body = req.body
 
   if (!body) {
