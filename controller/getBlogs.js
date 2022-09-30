@@ -1,6 +1,7 @@
 const Blog = require('../models/blog')
 
-getBlogs = async (req, res) => {
+// ENDPOINT: /api/blog
+const getBlogs = async (req, res) => {
   await Blog.find({}, (err, blog) => {
     if (err) {
       return res.status(400).json({ success: false, error: err })

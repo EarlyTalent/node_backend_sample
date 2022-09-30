@@ -1,18 +1,34 @@
+// NPM Packages
 const express = require('express')
+const dotenv = require("dotenv");
 const cors = require('cors')
 
-const db = require ('./db')
-const router = require('./router')
+// DB Connection
+const connectDB = require ('./db')
 
+// Import Routes
+const blogRouter = require('./routes/blogRoutes')
+
+
+// ENV Config
+dotenv.config({ path: ".env" });
+
+// Express Config
 const app = express()
+
 const port = 3001
 
 app.use(express.urlencoded({ extended: true }))
+
 app.use(cors())
+
 app.use(express.json())
 
-db.on('error', console.error.bind(console, 'MongoDB connection failed...'))
+// Use DB Connection
+connectDB()
 
-app.use('/api', router)
+// Use Routes
+app.use('/api', blogRouter)
 
+// Run App
 app.listen(port, () => console.log(`Server running on ${port}`))
