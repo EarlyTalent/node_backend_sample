@@ -1,5 +1,6 @@
 const Blog = require('../models/blog')
 
+// ENDPOINT: /api/blog
 const getBlogs = async (req, res) => {
   await Blog.find({}, (err, blog) => {
     if (err) {
