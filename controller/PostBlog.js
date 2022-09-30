@@ -2,6 +2,7 @@ const Blog = require('../models/blog')
 
 postBlog = (req, res) => {
   const body = req.body
+  console.log(body);
 
   if (!body) {
     return res.status(400).json({
@@ -11,6 +12,7 @@ postBlog = (req, res) => {
   }
 
   const blog = new Blog(body)
+  console.log(blog);
 
   if (!blog) {
     return res.status(400).json({ success: false, error: err })
