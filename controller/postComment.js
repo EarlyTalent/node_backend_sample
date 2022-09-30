@@ -1,7 +1,7 @@
 const Blog = require('../models/blog')
 const Comment = require('../models/comment')
 
-// ENDPOINT: api/comments/:id (Post ID)
+// ENDPOINT: POST /api/blog/:id/comments (id = blog ID)
 const createComment = async (req, res) => {
     // Attach blog id to request body
     req.body.blog = req.params.id

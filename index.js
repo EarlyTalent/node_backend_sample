@@ -8,7 +8,7 @@ const connectDB = require ('./db')
 
 // Import Routes
 const blogRouter = require('./routes/blogRoutes')
-const commentRouter = require('./routes/commentRoutes')
+
 
 // ENV Config
 dotenv.config({ path: ".env" });
@@ -29,7 +29,6 @@ connectDB()
 
 // Use Routes
 app.use('/api', blogRouter)
-app.use('/api/comments', commentRouter)
 
 // Run App
 app.listen(port, () => console.log(`Server running on ${port}`))
