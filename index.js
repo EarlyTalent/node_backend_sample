@@ -1,8 +1,11 @@
 const express = require('express')
+const dotenv = require("dotenv");
 const cors = require('cors')
 
-const db = require ('./db')
+const connectDB = require ('./db')
 const blogRouter = require('./routes/blogRoutes')
+
+dotenv.config({ path: ".env" });
 
 const app = express()
 const port = 3001
@@ -11,7 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 app.use(express.json())
 
-db.on('error', console.error.bind(console, 'MongoDB connection failed...'))
+connectDB()
 
 app.use('/api', blogRouter)
 

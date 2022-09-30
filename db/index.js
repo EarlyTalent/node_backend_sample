@@ -1,11 +1,8 @@
 const mongoose = require('mongoose')
 
-mongoose
-  .connect('mongodb://127.0.0.1:27017/blog', { useNewUrlParser: true })
-  .catch(e => {
-    console.error('Connection error', e.message)
-  })
+const connectDB = async () => {
+  const con = await mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
+  console.log('DB Connected')
+}
 
-const db = mongoose.connection
-
-module.exports = db
+module.exports = connectDB
