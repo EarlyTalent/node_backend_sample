@@ -4,6 +4,7 @@ const cors = require('cors')
 
 const connectDB = require ('./db')
 const blogRouter = require('./routes/blogRoutes')
+const commentRouter = require('./routes/commentRoutes')
 
 dotenv.config({ path: ".env" });
 
@@ -17,5 +18,6 @@ app.use(express.json())
 connectDB()
 
 app.use('/api', blogRouter)
+app.use('/api/comments', commentRouter)
 
 app.listen(port, () => console.log(`Server running on ${port}`))

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Comment = new mongoose.Schema({
     // Comment Body
     body: {
-        string,
+        type: String,
         required: true
     },
     // Associated Blog
