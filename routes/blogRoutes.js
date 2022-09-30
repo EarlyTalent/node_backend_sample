@@ -1,6 +1,6 @@
 const express = require('express')
 const {getBlogs} = require('../controller/getBlogs')
-const {postBlog} = require('../controller/PostBlog')
+const {postBlog} = require('../controller/postBlog')
 const { getBlog } = require('../controller/getBlog')
 const { getComments } = require('../controller/getComments')
 const { createComment } = require('../controller/postComment')
