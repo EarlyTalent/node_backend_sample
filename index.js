@@ -1,18 +1,17 @@
 const express = require('express')
-const cors = require('cors')
+const GetBlogs = require('../controller/getBlogs')
+const PostBlog = require('../controller/postBlog')
 
-const db = require ('./db')
-const router = require('./router')
+const GetComments = require('../controller/getComments')
+const postComments = require('../controller/postComments')
 
-const app = express()
-const port = 3001
+const router = express.Router()
 
-app.use(express.urlencoded({ extended: true }))
-app.use(cors())
-app.use(express.json())
+router.get('/blog/:id', GetBlogs.getBlogs)
+router.post('/blog/post', PostBlog.postBlog)
 
-db.on('error', console.error.bind(console, 'MongoDB connection failed...'))
+// setting up the endpoints to use for getComments & postComments
+router.get('blog/post/:id/comment', GetComments.getCommments)
+router.post('blog/post/:id/comment', postComments.postComment)
 
-app.use('/api', router)
-
-app.listen(port, () => console.log(`Server running on ${port}`))
+module.exports = router
